@@ -1,0 +1,37 @@
+{
+    "label" : "shutdown",
+    "action" : "loginctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+
+    "label" : "lock",
+    "action" : "$HOME/.local/share/scripts/lock/launch-swaylock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "reboot",
+    "action" : "loginctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "reload",
+    "action" : "niri msg action load-config-file",
+    "text" : "Reload",
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "killall -u $USER",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "suspend",
+    "action" : "loginctl suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}

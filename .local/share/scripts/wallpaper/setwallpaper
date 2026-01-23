@@ -1,0 +1,58 @@
+#!/bin/bash
+
+function callwal()
+{
+	ALPHA=80
+	if [[ -n $2 ]]; then
+		ALPHA=$2
+	elif [[ -n $WALPHA ]]; then
+		ALPHA=$WALPHA
+	fi
+
+	wal -i $1 -a $ALPHA
+}
+
+function cache_img()
+{
+	cp $1 ~/.local/share/bg
+}
+
+function wlogout_icons()
+{
+	source ~/.cache/wal/colors.sh
+	for file in ~/.config/wlogout/icons/*; do
+		if [ -f "$file" ]; then
+			convert $file -alpha extract -background $color15 -alpha shape $file
+		fi
+	done
+}
+
+function swaync_reload()
+{	
+	swaync-client --reload-css
+}
+
+function swww_set(){
+  swww img $1
+}
+
+function foot_trans(){
+  ALPHA=80
+  if [[ -n $2 ]]; then
+    ALPHA=$2
+  elif [[ -n $WALPHA ]]; then
+    ALPHA=$WALPHA
+  fi
+  echo "alpha=$(echo "scale=2; $ALPHA/100" | bc)" >> $1
+}
+
+#pkill waybar
+#hyprctl reload
+
+if [[ -n $1 ]]; then
+	callwal $1 $2
+	cache_img $1
+  swww_set $1
+  foot_trans ~/.cache/wal/colors-foot $2
+	swaync_reload
+fi

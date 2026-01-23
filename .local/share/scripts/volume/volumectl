@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $1 in
+	increase)
+	pactl set-sink-volume 0 +$2%
+	;;
+	decrease)
+	pactl set-sink-volume 0 -$2%
+	;;
+esac
+line=$(pactl get-sink-volume @DEFAULT_SINK@)   # or your input string
+vol=$(printf '%s' "$line" | grep -oP 'front-left:\s*\d+\s*/\s*\K\d+(?=%)')
+notify-send $vol -e -r 1 -p

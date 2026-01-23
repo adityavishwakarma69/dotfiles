@@ -1,0 +1,8 @@
+#!/bin/bash
+pidof swayidle ||
+swayidle -w \
+  timeout 120 'brightnessctl s $(($(brightnessctl g)/2))' \
+    resume 'brightnessctl s $(($(brightnessctl g)*2))' \
+  timeout 180 '~/.local/share/scripts/lock/launch-swaylock'\
+  timeout 300 'niri msg action power-off-monitors' \
+    resume 'niri msg action power-on-monitors'

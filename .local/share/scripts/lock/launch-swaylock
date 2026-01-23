@@ -1,0 +1,24 @@
+#!/bin/bash
+pidof swaylock ||
+source ~/.cache/wal/colors.sh
+swaylock\
+  --image ~/.local/share/bg \
+  --bs-hl-color $color15 \
+  --inside-color $color14'77' \
+  --inside-clear-color $color15'77' \
+  --inside-ver-color $color14'77' \
+  --inside-wrong-color $color10'77' \
+  --key-hl-color $color15 \
+  --ring-color $color14 \
+  --ring-caps-lock-color $color14 \
+  --ring-clear-color $color15 \
+  --ring-ver-color $color14 \
+  --ring-wrong-color $color10 \
+  --separator-color $color0 \
+  --text-color $color0 \
+  --text-clear-color $color0 \
+  --text-caps-lock-color $color0 \
+  --text-ver-color $color0 \
+  --text-wrong-color $color0 \
+  --font ProFontIIXNerdFont \
+  -f \

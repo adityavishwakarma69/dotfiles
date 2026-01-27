@@ -115,7 +115,7 @@
 
     "custom/wofi": {
 	"format": "",
-	"on-click": "bash -c '/home/aditya/.local/bin/g15-fan-cli.py g'",	
+	"on-click": "wofi --show drun",	
 	"tooltip": false
     },
     "custom/power": {

@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 15, // Waybar height (to be removed for auto height)
+    "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "margin-right" : 0,
     "margin-left" : 0,    
@@ -92,14 +92,15 @@
         "tooltip-format": "{ifname}: {essid} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {essid}"
+        "format-alt": "{ifname}: {essid}",
+        "on-click-right": "/home/aditya/.local/share/scripts/wifimenu/wifimenu.sh"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {format_source}% {icon}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "M ",
+        "format-muted": "M 󰖁",
         "format-icons": {
             "headphone": "",
             "hands-free": "󱡏",
@@ -107,10 +108,10 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+            "default": ["", "", ""]
         },
         "on-click-right": "pavucontrol",
-	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
     "custom/wofi": {
@@ -118,38 +119,10 @@
 	"on-click": "wofi --show drun",	
 	"tooltip": false
     },
-    "custom/power": {
-	"format": "⏻ ",
-	"on-click": "loginctl poweroff",
+    "custom/governor": {
+	"format": "",
+	"on-click": "wofi --show drun",	
 	"tooltip": false
-    },
-    "custom/logout": {
-	"format": "󰍃 ",
-	"on-click": "loginctl terminate-user $USER",	
-	"tooltip": false
-    },
-    "custom/reboot": {
-	"format": " ",
-	"on-click": "loginctl reboot",	
-	"tooltip": false
-    },
-    "custom/lock": {
-	"format": " ",
-	"on-click": "hyprlock",	
-	"tooltip": false
-    },
-    "group/power": {
-	"orientation": "inherit",
-	"drawer": {
-	   "transition-duration" : 500,
-	   "transition-left-to-right": false
-	},
-	"modules": [
-	   "custom/power",
-	   "custom/logout",
-	   "custom/lock",
-	   "custom/reboot"
-	]
     },
     "custom/noti": {
 	    "tooltip": false,

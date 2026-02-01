@@ -9,7 +9,7 @@ function callwal()
 		ALPHA=$WALPHA
 	fi
 
-	wal -i $1 -a $ALPHA
+	wal -i $1 -a $ALPHA $3
 }
 
 function cache_img()
@@ -50,7 +50,7 @@ function foot_trans(){
 #hyprctl reload
 
 if [[ -n $1 ]]; then
-	callwal $1 $2
+	callwal $1 $2 $3
 	cache_img $1
   swww_set $1
   foot_trans ~/.cache/wal/colors-foot $2

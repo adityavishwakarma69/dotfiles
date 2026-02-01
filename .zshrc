@@ -17,6 +17,16 @@ alias hw="dbus-run-session hyprland"
 alias ls="ls --color=auto"
 alias vim='nvim'
 
+#weird ass curl shit
+defination () {
+  if [ -z $1 ]
+  then
+    echo "no word provided"
+    return 1
+  fi
+  curl "dict.org/d:${1}"
+}
+
 #plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
@@ -27,4 +37,12 @@ export PATH="$HOME/.local/bin/:$PATH"
 
 #cat ~/.cache/wal/sequences
 
-PROMPT=" %B%F{cyan}%n%f%b%B%F{green}@%f%b%B%F{yellow}%M%f%b%B[%b%B%F{cyan}%~%f%b%B]%b%B%F{yellow}$ %f%b"
+if [ $TERM = "foot" ]
+then
+  PROMPT="%F{cyan}┏(%~)━%B%F{yellow}[%f%b%B%F{magenta}%n%f%b%B%F{red}@%f%b%B%F{cyan}%m%f%b%B%F{yellow}]%f%b%F{cyan}━[%D]━[%T]
+%F{cyan}┗━(%F{magenta}%?%F{magenta}) "
+  chafa ~/Pictures/ily/ayaka.png -s 24x24
+  alias clear="clear;chafa ~/Pictures/ily/ayaka.png -s 24x24"
+else
+  PROMPT="%B%F{yellow}%n%f%b%B%F{blue}@%f%b%B%F{cyan}%m%f%b%B%F{yellow}$%f%b "
+fi

@@ -20,5 +20,5 @@ swaylock\
   --text-caps-lock-color $color0 \
   --text-ver-color $color0 \
   --text-wrong-color $color0 \
-  --font ProFontIIXNerdFont \
+  --font JetBrainsMonoNLNerdFontPropo \
   -f \

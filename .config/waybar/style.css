@@ -11,6 +11,7 @@ window#waybar {
     color: @color14;
     transition-property: background-color;
     transition-duration: .5s;
+    border: 2px solid @foreground;
 }
 
 .modules-right, .modules-left, .modules-center{

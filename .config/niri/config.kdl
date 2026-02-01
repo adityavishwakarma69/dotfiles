@@ -53,6 +53,7 @@ layout {
     }
 }
 
+
 include "/home/aditya/.cache/wal/colors-niri.kdl"
 
 //autostart

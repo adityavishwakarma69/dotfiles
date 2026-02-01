@@ -12,24 +12,17 @@ def shell_exec(command : str):
         print(f"stderr : {result.stderr}")
     return result
 
-def get_temp(core):
-    temps = psutil.sensors_temperatures()
-    coretemp = temps.get("coretemp")
-
-    if coretemp:
-        return coretemp[core].current
-    else:
-        return None
 
 def get_temp():
     temps = psutil.sensors_temperatures()
     coretemp = temps.get("coretemp")
     if not coretemp:
         return None
-    avg = 0
+    maxtemp = 0
     for temp in coretemp:
-        avg += temp.current
-    return avg//len(coretemp)
+        if temp.current > maxtemp:
+            maxtemp = temp.current
+    return maxtemp
 
 socket_path = "/run/routined.sock"
 buffer_size = 1024
@@ -54,10 +47,10 @@ if __name__ == "__main__":
         mode = query_mode()
         core_no = 0
         temp = get_temp()
-        if temp > 85 and mode != 2:
+        if temp > 90 and mode != 2:
             shell_exec("notify-send \"Enabling G-Mode 🥵\" -e -t 1500")
             send_request("Performance")
-        elif temp < 65 and mode != 1:
+        elif temp < 70 and mode != 1:
             shell_exec("notify-send \"Disabling G-Mode 🥶\" -e -t 1500")
             send_request("Balanced")
         time.sleep(5)

@@ -168,4 +168,6 @@ binds {
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+P { power-off-monitors; }
+
+    Mod+N { spawn-sh "swaync-client -t"; }
 }

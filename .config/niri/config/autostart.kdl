@@ -1,8 +1,9 @@
-spawn-at-startup "swww-daemon"
-spawn-at-startup "pipewire"
-spawn-at-startup "waybar"
-spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
-spawn-at-startup "swaync"
-spawn-at-startup "~/.local/share/scripts/idle/launch-swayidle"
-spawn-at-startup "~/.local/share/scripts/tempmon/tempmon.py"
-spawn-at-startup "~/.local/share/scripts/powermon/powermon.sh"
+spawn-at-startup "swww-daemon" // wallpaper
+spawn-at-startup "pipewire" // sound devices screenshare more
+spawn-at-startup "mpris-proxy" // mpris activation
+spawn-at-startup "waybar" // status bar
+spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1" // polkit prompt
+spawn-at-startup "swaync" // notification client
+spawn-at-startup "~/.local/share/scripts/idle/launch-swayidle" // idle 
+spawn-at-startup "~/.local/share/scripts/tempmon/tempmon.py" // temperature monitor
+spawn-at-startup "~/.local/share/scripts/powermon/powermon.sh" // power monitor

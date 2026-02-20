@@ -2,8 +2,7 @@
 
 menu="wofi --show dmenu --hide-search --hide-scroll --lines 8"
 passmenu="wofi --show dmenu --password --height 1 --hide-scroll --prompt Password"
-
-ssid=$(nmcli -t -f SSID dev wifi list | sort -u | grep -v "^$" | $menu)
+ssid=$(nmcli -t -f SSID dev wifi list --rescan yes | sort -u | grep -v "^$" | $menu)
 if [ -z "$ssid" ]
 then
   echo "nothing selected"

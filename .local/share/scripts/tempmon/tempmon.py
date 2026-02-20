@@ -20,8 +20,9 @@ def get_temp():
         return None
     maxtemp = 0
     for temp in coretemp:
-        if temp.current > maxtemp:
+        if temp.label == "Package id 0":
             maxtemp = temp.current
+            break
     return maxtemp
 
 socket_path = "/run/routined.sock"
@@ -50,7 +51,7 @@ if __name__ == "__main__":
         if temp > 90 and mode != 2:
             shell_exec("notify-send \"Enabling G-Mode 🥵\" -e -t 1500")
             send_request("Performance")
-        elif temp < 70 and mode != 1:
+        elif temp < 65 and mode != 1:
             shell_exec("notify-send \"Disabling G-Mode 🥶\" -e -t 1500")
             send_request("Balanced")
         time.sleep(5)

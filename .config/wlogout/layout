@@ -25,7 +25,7 @@
 }
 {
     "label" : "logout",
-    "action" : "killall -u $USER",
+    "action" : "loginctl terminate-user $USER",
     "text" : "Logout",
     "keybind" : "e"
 }

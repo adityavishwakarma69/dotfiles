@@ -35,13 +35,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 export PATH="$HOME/.local/bin/:$PATH"
 
 
-#cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
 if [ $TERM = "foot" ]
 then
   PROMPT="%F{cyan}┏(%~)━%B%F{yellow}[%f%b%B%F{magenta}%n%f%b%B%F{red}@%f%b%B%F{cyan}%m%f%b%B%F{yellow}]%f%b%F{cyan}━[%D]━[%T]
 %F{cyan}┗━(%F{magenta}%?%F{magenta}) "
-  chafa ~/Pictures/ily/ayaka.png -s 24x24
+  # chafa ~/Pictures/ily/ayaka.png -s 24x24
   alias clear="clear;chafa ~/Pictures/ily/ayaka.png -s 24x24"
 else
   PROMPT="%B%F{yellow}%n%f%b%B%F{blue}@%f%b%B%F{cyan}%m%f%b%B%F{yellow}$%f%b "

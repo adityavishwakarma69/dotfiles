@@ -7,3 +7,4 @@ spawn-at-startup "swaync" // notification client
 spawn-at-startup "~/.local/share/scripts/idle/launch-swayidle" // idle 
 spawn-at-startup "~/.local/share/scripts/tempmon/tempmon.py" // temperature monitor
 spawn-at-startup "~/.local/share/scripts/powermon/powermon.sh" // power monitor
+

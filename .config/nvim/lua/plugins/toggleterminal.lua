@@ -6,7 +6,6 @@ local plugin = {
     require('toggleterm').setup()
 
     vim.keymap.set('n', '<C-t>', ":ToggleTerm<CR>")
-    
   end
 }
 

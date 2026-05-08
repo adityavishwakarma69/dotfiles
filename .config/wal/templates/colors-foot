@@ -1,7 +1,7 @@
 # -*- conf -*-
 # Alacritty
 
-[colors]
+[colors-dark]
 cursor = {background.strip} {cursor.strip}
 background= {background.strip}
 foreground= {foreground.strip}

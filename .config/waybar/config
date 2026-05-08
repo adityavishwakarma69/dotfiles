@@ -10,7 +10,7 @@
     "spacing": 4, // Gaps between modules (4px)
                   // Choose the order of the modules
     "modules-left": ["custom/wofi", "niri/workspaces", "niri/window"],
-    "modules-center": ["idle_inhibitor", "clock", "custom/noti"],
+    "modules-center": ["idle_inhibitor", "clock", "custom/mako"],
     "modules-right": ["tray", "pulseaudio", "network", "temperature", "backlight", "battery"],
     // Modules configuration
 
@@ -105,11 +105,11 @@
     "network": {
       // "interface": "wlp2*", // (Optional) To force the use of this interface
       "format-wifi": "{signalStrength}% ",
-      "format-ethernet": "{ipaddr}/{cidr}",
+      "format-ethernet": "{ipaddr}",
       "tooltip-format": "{ifname}: {essid} via {gwaddr}",
-      "format-linked": "{ifname} (No IP)",
+      "format-linked": "󰖂 VPN",
       "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {essid}",
+      "format-alt": "{ifname}",
       "on-click-right": "/home/aditya/.local/share/scripts/wifimenu/wifimenu.sh"
     },
     "pulseaudio": {
@@ -140,6 +140,10 @@
       "format": "",
       "on-click": "wofi --show drun",	
       "tooltip": false
+    },
+    "custom/mako": {
+      "format": " ",
+      "on-click": "makoctl restore"
     },
     "custom/noti": {
       "tooltip": false,

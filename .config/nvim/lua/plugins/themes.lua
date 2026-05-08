@@ -4,9 +4,6 @@ local plugins = {
     lazy = false,
     name = "pywal",
     priority = 1000,
-    config = function ()
-      vim.cmd.colorscheme "pywal"
-    end
   },
   {
     "catppuccin/nvim",

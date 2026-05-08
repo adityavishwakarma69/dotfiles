@@ -7,11 +7,12 @@ local plugins = {
       local builtin = require("telescope.builtin")
       vim.keymap.set('n', '<leader>fg', ":Telescope live_grep<CR>", {})
       vim.keymap.set('n', '<leader>ff', ":Telescope find_files<CR>", {})
-      vim.keymap.set('n', '<leader>th', ":Telescope colorscheme<CR>", {})
+      -- using other plugin for this currently
+      -- vim.keymap.set('n', '<leader>th', ":Telescope colorscheme<CR>", {})
       vim.keymap.set('n', '<leader>fh', ":Telescope oldfiles<CR>", {})
       vim.keymap.set('n', '<leader>fm', ":Telescope marks<CR>", {})
       vim.keymap.set('n', '<leader>b', ":Telescope buffers<CR>", {})
- --     vim.keymap.set('n', '<C-n>', ":Telescope file_browser<CR>", {})
+      --     vim.keymap.set('n', '<C-n>', ":Telescope file_browser<CR>", {})
     end
   },
   {
@@ -32,8 +33,18 @@ local plugins = {
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    config = function ()
+    config = function()
       require("telescope").load_extension "file_browser"
+    end
+  },
+  {
+    "tingey21/telescope-colorscheme-persist.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    lazy = false,
+    config = function()
+      require("telescope-colorscheme-persist").setup({
+        keybind = "<leader>th"
+      })
     end
   }
 }

@@ -46,6 +46,17 @@ function foot_trans(){
   echo "alpha=$(echo "scale=2; $ALPHA/100" | bc)" >> $1
 }
 
+function mako_background(){
+  ALPHA=80
+  if [[ -n $2 ]]; then
+    ALPHA=$2
+  elif [[ -n $WALPHA ]]; then
+    ALPHA=$WALPHA
+  fi
+	source ~/.cache/wal/colors.sh
+  echo "background-color=${color0}$(printf "%x" $(printf "%.0f" $(echo "$ALPHA*2.55" | bc)))" >> $1
+}
+
 #pkill waybar
 #hyprctl reload
 
@@ -54,5 +65,6 @@ if [[ -n $1 ]]; then
 	cache_img $1
   swww_set $1
   foot_trans ~/.cache/wal/colors-foot $2
-	swaync_reload
+  mako_background ~/.cache/wal/colors-mako $2
+	# swaync_reload
 fi

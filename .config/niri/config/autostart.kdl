@@ -1,10 +1,16 @@
-spawn-at-startup "swww-daemon" // wallpaper
-spawn-at-startup "pipewire" // sound devices screenshare more
-spawn-at-startup "mpris-proxy" // mpris activation
-spawn-at-startup "waybar" // status bar
-spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1" // polkit prompt
-spawn-at-startup "swaync" // notification client
-spawn-at-startup "~/.local/share/scripts/idle/launch-swayidle" // idle 
-spawn-at-startup "~/.local/share/scripts/tempmon/tempmon.py" // temperature monitor
-spawn-at-startup "~/.local/share/scripts/powermon/powermon.sh" // power monitor
+//spawn-at-startup "swww-daemon" // wallpaper
+//spawn-at-startup "pipewire" // sound devices screenshare more
+//spawn-at-startup "mpris-proxy" // mpris activation
+//spawn-at-startup "waybar" // status bar
+//spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1" // polkit prompt
+// spawn-at-startup "swaync" // notification client
+//spawn-at-startup "mako -c ~/.cache/wal/colors-mako" // notification client
+//spawn-at-startup "~/.local/share/scripts/idle/launch-swayidle" // idle 
+//spawn-at-startup "~/.local/share/scripts/tempmon/tempmon.py" // temperature monitor
+//spawn-at-startup "~/.local/share/scripts/powermon/powermon.sh" // power monitor
+//spawn-at-startup "/usr/sbin/sway-audio-idle-inhibit"
 
+// I was an idiot for doing all that
+spawn-sh-at-startup "runsvdir ~/.var/sv > /dev/null 2>&1"
+//one time only thats why this
+spawn-sh-at-startup "sleep 2 && noisetorch -i"
